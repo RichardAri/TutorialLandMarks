@@ -12,6 +12,7 @@ struct TutorialLandMarksApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ModelData())
         }
     }
 }
