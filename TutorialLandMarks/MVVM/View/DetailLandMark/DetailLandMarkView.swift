@@ -12,11 +12,14 @@ struct DetailLandMarkView: View {
     var body: some View {
         ScrollView{
             VStack{
-                LandMarkMap(coordinate: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868))
-                    .frame(height: 300)
-                LandMarkImage(image: Image("icybay"))
-                    .offset(y:-130)
-                    .padding(.bottom,-130)
+                VStack{
+                    LandMarkMap(coordinate: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868))
+                        .frame(height: 300)
+                    LandMarkImage(image: Image("icybay").resizable())
+                        .offset(y:-130)
+                        .padding(.bottom,-130)
+    
+                }
                 VStack{
                     HStack{
                         Text("Nombre Del Lugar")
@@ -43,7 +46,6 @@ struct DetailLandMarkView: View {
                 .padding()
             }
             .navigationTitle("titulo")
-            .navigationBarTitleDisplayMode(.inline)
         }
         .ignoresSafeArea()
     }
